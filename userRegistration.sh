@@ -40,6 +40,25 @@ do
 fi
 done
 }
+
+function email() {
+checkPattern=true
+emailPattern='^[a-zA-Z0-9]([._+]{0,1}[a-zA-Z0-9])*[@]{1}[a-zA-Z]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2}){0,1}$'
+while [ $checkPattern = true ]
+do
+        echo "Enter user email id"
+        read name
+        if [[ $name =~ $emailPattern ]]
+        then
+	        echo "email is valid"
+                checkPattern=false
+        else
+	        echo "email id is wrong"
+        
+fi
+done
+}
 lastName
+email
 
 
