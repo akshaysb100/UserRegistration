@@ -97,13 +97,14 @@ done
 
 function checkPassword() {
 checkPattern=true
-checkPaswword="^[a-zA-Z0-9]*(.*[A-Z].*{1,}+)[a-zA-Z0-9]*{7,}$"
+checkPassword="^[a-zA-Z0-9]*(.*[A-Z].*{1,}+)[a-zA-Z0-9]*{7,}$"
+checkPasswordNumber="^[a-zA-Z0-9]*(([0-9][A-Z]+[a-zA-Z0-9])|([A-Z][0-9]+[a-zA-Z0-9]*))[A-Za-z0-9]*$"
 
 while [ $checkPattern = true ]
 do
         echo "Enter password"
         read password
-        if [[ $password =~ $checkPaswword ]]
+        if [[ $password =~ $checkPasswordNumber ]]
         then
 	        echo "pasword is valid"
                 checkPattern=false
