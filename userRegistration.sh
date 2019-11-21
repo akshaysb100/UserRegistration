@@ -23,4 +23,23 @@ fi
 done
 }
 
-firstName
+function lastName() {
+checkPattern=true
+namePattern="^[A-Z]([A-Za-z]{2,})$"
+while [ $checkPattern = true ]
+do
+        echo "Enter user Last name"
+        read name
+        if [[ $name =~ $namePattern ]]
+        then
+	        echo "Last name is valid"
+                checkPattern=false
+        else
+	        echo "Last name starts with Cap and has minimum 3 characters"
+        
+fi
+done
+}
+lastName
+
+
