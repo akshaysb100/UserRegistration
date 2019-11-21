@@ -77,4 +77,41 @@ fi
 done
 }
 
-mobileNumber
+function mobileNumber() {
+checkPattern=true
+CountryPattern="^[0-9]{2}\s{1}[0-9]{10}$"
+while [ $checkPattern = true ]
+do
+        echo "Enter user mobile number"
+        read mobileNumber
+        if [[ $mobileNumber =~ $CountryPattern ]]
+        then
+	        echo "mobile number is valid"
+                checkPattern=false
+        else
+	        echo "Country code follow by space and 10 digit number"
+        
+fi
+done
+}
+
+function checkPassword() {
+checkPattern=true
+CountryPattern="^[a-zA-Z0-9]{8}"
+while [ $checkPattern = true ]
+do
+        echo "Enter password"
+        read password
+        if [[ $password =~ $CountryPattern ]]
+        then
+	        echo "pasword is valid"
+                checkPattern=false
+        else
+	        echo "In password minimum 8 Characters"
+        
+fi
+done
+}
+
+checkPassword
+
