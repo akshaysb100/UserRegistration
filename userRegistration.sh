@@ -47,8 +47,8 @@ emailPattern='^[a-zA-Z0-9]([._+]{0,1}[a-zA-Z0-9])*[@]{1}[a-zA-Z]{1,}[.]{1}[a-zA-
 while [ $checkPattern = true ]
 do
         echo "Enter user email id"
-        read name
-        if [[ $name =~ $emailPattern ]]
+        read email
+        if [[ $email =~ $emailPattern ]]
         then
 	        echo "email is valid"
                 checkPattern=false
@@ -58,7 +58,23 @@ do
 fi
 done
 }
-lastName
-email
 
+function mobileNumber() {
+checkPattern=true
+CountryPattern="^[0-9]{2}\s{1}[0-9]{10}$"
+while [ $checkPattern = true ]
+do
+        echo "Enter user mobile number"
+        read mobileNumber
+        if [[ $mobileNumber =~ $CountryPattern ]]
+        then
+	        echo "mobile number is valid"
+                checkPattern=false
+        else
+	        echo "Country code follow by space and 10 digit number"
+        
+fi
+done
+}
 
+mobileNumber
