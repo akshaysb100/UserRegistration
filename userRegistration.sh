@@ -2,14 +2,25 @@
 
 echo "Welcome User Registration page"
 
-echo "Enter user first name"
-read name
+#variable
+checkPattern=true
+
+function firstName() {
+checkPattern=true
 namePattern="^[A-Z]([A-Za-z]{2,})$"
-
-if [[ $name =~ $namePattern ]]
-then
-	echo "valid user name"
-else
-	echo "First name starts with Cap and has minimum 3 characters"
+while [ $checkPattern = true ]
+do
+        echo "Enter user first name"
+        read name
+        if [[ $name =~ $namePattern ]]
+        then
+	        echo "First name is valid"
+                checkPattern=false
+        else
+	        echo "First name starts with Cap and has minimum 3 characters"
+        
 fi
+done
+}
 
+firstName
