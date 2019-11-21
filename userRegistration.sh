@@ -97,18 +97,19 @@ done
 
 function checkPassword() {
 checkPattern=true
-CountryPattern="^[a-zA-Z0-9]{8}"
+checkPaswword="^[a-zA-Z0-9]*(.*[A-Z].*{1,}+)[a-zA-Z0-9]*{7,}$"
+
 while [ $checkPattern = true ]
 do
         echo "Enter password"
         read password
-        if [[ $password =~ $CountryPattern ]]
+        if [[ $password =~ $checkPaswword ]]
         then
 	        echo "pasword is valid"
                 checkPattern=false
         else
 	        echo "In password minimum 8 Characters"
-        
+                
 fi
 done
 }
